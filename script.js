@@ -16,6 +16,8 @@ const cover = document.querySelector(".track-cover");
 const visualizer = document.querySelector("#visualizer");
 const lyric = document.querySelector(".lyric");
 const myDate = document.querySelector(".my-date");
+const volumeBar = document.querySelector(".volume-bar");
+const bar = document.querySelector(".bar");
 const leftTrackName = document.querySelector(
 	".player-left .track-infos .track-name"
 );
@@ -38,10 +40,13 @@ let isPlaying = false;
 let repeatOne = false;
 let myLyrics = [];
 let myText = "";
+let volume = 0.5;
+bar.style.width = `${volume * 100}%`;
+
 const dt = new Date();
 const dateYear = dt.getFullYear();
 myDate.innerText = dateYear;
-
+audio.volume = volume;
 const trackUpdate = (songIndex) => {
 	const songLyric = songs[currentSongIndex].lyric;
 	cover.setAttribute("src", songs[currentSongIndex].cover);
@@ -154,6 +159,13 @@ function songProgress(e) {
 	audio.currentTime = (clickX / width) * duration;
 }
 
+function volumeProgress(e) {
+	const clickX = e.offsetX;
+	audio.volume = clickX / 100;
+	volume = audio.volume;
+	bar.style.width = `${volume * 100}%`;
+}
+
 async function start(e) {
 	const context = new AudioContext();
 	const src = context.createMediaElementSource(audio);
@@ -212,6 +224,8 @@ repeatBtn.addEventListener("click", () => {
 audio.addEventListener("timeupdate", updateSongProgress);
 
 progressBar.addEventListener("click", songProgress);
+
+volumeBar.addEventListener("click", volumeProgress);
 
 audio.addEventListener("ended", nextSongOnEnded);
 

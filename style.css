@@ -76,9 +76,8 @@ body {
 	transition: songProgress 0.1s linear;
 }
 .controls {
-	margin-top: 15px;
 	text-align: center;
-	margin: 31px 0 40px 0;
+	margin: 31px 0 30px 0;
 }
 .controls button {
 	background-color: yellowgreen;
@@ -166,8 +165,29 @@ hr {
 		background-position: 0% 100%;
 	}
 }
+
+.volume-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+}
+
+.volume-bar {
+	background: rgb(42, 50, 23);
+	height: 4px;
+	width: 100px;
+	cursor: pointer;
+}
+
+.volume-bar .bar {
+	background-color: rgb(154, 205, 50);
+	height: 100%;
+	width: 0%;
+}
+
 .copyright {
-	color: yellowgreen;
+	color: rgb(154, 205, 50);
 	font-size: 20px;
 	position: absolute;
 	bottom: 20px;
