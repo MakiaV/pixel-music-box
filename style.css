@@ -172,3 +172,12 @@ hr {
 	position: absolute;
 	bottom: 20px;
 }
+
+@media (max-width: 950px) {
+	.container {
+		height: 100vh;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 1.5fr;
+	}
+}
