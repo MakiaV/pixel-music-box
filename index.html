@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+			integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link rel="stylesheet" href="style.css" />
+		<title>Pixel Music Box</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="player-left">
+				<div class="track-infos">
+					<img src="" alt="cover" class="track-cover" />
+					<div class="track-meta">
+						<div class="track-name"></div>
+						<div class="track-artist"></div>
+					</div>
+				</div>
+				<div class="time-bar">
+					<div class="track-current-time"></div>
+					<div class="track-duration"></div>
+				</div>
+				<div class="progress-bar">
+					<div class="progress"></div>
+				</div>
+				<div class="controls">
+					<button id="prev-btn">
+						<i
+							class="fas fa-backward"
+							style="color: rgb(56, 67, 32)"
+						></i>
+					</button>
+					<button id="play-btn">
+						<i
+							class="fas fa-play"
+							style="color: rgb(56, 67, 32)"
+						></i>
+					</button>
+
+					<button id="next-btn">
+						<i
+							class="fas fa-forward"
+							style="color: rgb(56, 67, 32)"
+						></i>
+					</button>
+					<button id="repeat-btn">
+						<i
+							class="fas fa-repeat"
+							style="color: rgb(56, 67, 32)"
+						></i>
+					</button>
+				</div>
+				<audio src="" id="audio"></audio>
+				<canvas id="visualizer"></canvas>
+			</div>
+
+			<div class="player-right">
+				<div id="tracks-list"></div>
+				<div class="lyric-title">
+					<hr />
+					<span>LYRIC</span>
+					<hr />
+				</div>
+
+				<template id="track-template">
+					<div id="track">
+						<div class="track-infos">
+							<div class="track-number"></div>
+							<div class="track-artist"></div>
+							<div>-</div>
+							<div class="track-name"></div>
+						</div>
+						<div class="info-track-duration"></div>
+					</div>
+				</template>
+				<div class="lyric"></div>
+			</div>
+		</div>
+		<div class="copyright">
+			<span>&copy;</span>
+			<span class="my-date"></span>
+			<span>Pixel Music Box</span>
+		</div>
+		<script type="module" src="script.js"></script>
+	</body>
+</html>
